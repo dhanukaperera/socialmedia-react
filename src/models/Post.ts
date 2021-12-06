@@ -2,7 +2,7 @@ export interface IPost {
 	id: string;
 	title: string;
 	content: string;
-	createdAt: string;
+	createdAt?: Date;
 	username: string;
-	likeCount: Number;
+	likeCount?: number;
 }

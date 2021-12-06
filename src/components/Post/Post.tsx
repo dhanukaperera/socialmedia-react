@@ -9,17 +9,17 @@ const Post: FC<IPost> = ({
 	username,
 	likeCount,
 }) => {
+	const createdDate = new Date(createdAt || new Date()).toLocaleString(
+		"EN-GB"
+	);
 	return (
 		<PostStyle>
 			<h2>{title}</h2>
 			<p>{content}</p>
 			<ContentFooter>
 				<p>
-					By {username.toUpperCase()} at{" "}
-					{new Date(createdAt).toLocaleString("EN-GB")}
+					By {username.toUpperCase()} at {createdDate}
 				</p>
-				<p> </p>
-				{/* 	<p>Star : {likeCount}</p> */}
 				<HearButton>
 					<img src="heart-solid.svg" /> {likeCount}
 				</HearButton>
